@@ -18,6 +18,7 @@ Use SSH to connect to your EC2 instance:
 
 ```bash
 ssh -i your-key.pem ubuntu@your-ec2-instance-ip
+```
 ### 2. Install Java
 
 Update the package list and install OpenJDK 11:
