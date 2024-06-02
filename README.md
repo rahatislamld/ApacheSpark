@@ -12,7 +12,7 @@ Ensure have the following prerequisites:
 
 ## Installation Steps
 
-### 1. Connect to your EC2 Instance
+### 1. Connect to EC2 Instance
 
 Use SSH to connect to your EC2 instance:
 
