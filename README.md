@@ -1,17 +1,24 @@
-# Spark Setup and Example
+# Setting Up Apache Spark on EC2 Instance
 
-This guide provides steps to set up Apache Spark with Java and Scala on Ubuntu, and how to run a simple Spark application using `spark-submit`.
+This guide provides steps to set up Apache Spark on an EC2 instance and run a simple Spark application.
 
 ## Prerequisites
 
-Ensure your system has the following installed:
-- Ubuntu (20.04 or later)
-- Curl
-- GNU Privacy Guard (GPG)
+Ensure have the following prerequisites:
+
+- An EC2 instance running Ubuntu
+- Appropriate IAM role with necessary permissions
+- Basic understanding of Linux commands
 
 ## Installation Steps
 
-### 1. Install Java
+### 1. Connect to your EC2 Instance
+
+Use SSH to connect to your EC2 instance:
+
+```bash
+ssh -i your-key.pem ubuntu@your-ec2-instance-ip
+### 2. Install Java
 
 Update the package list and install OpenJDK 11:
 
@@ -20,7 +27,7 @@ sudo apt update
 sudo apt install openjdk-11-jdk -y
 java -version
 ```
-### 2. Install Scala
+### 3. Install Scala
 
 Update the package list and install Scala:
 
@@ -29,7 +36,7 @@ sudo apt update
 sudo apt install scala -y
 scala -version
 ```
-### 3. Install Apache Spark
+### 4. Install Apache Spark
 
 Download and extract Apache Spark:
 
@@ -39,7 +46,7 @@ tar xvf spark-3.5.1-bin-hadoop3.tgz
 sudo mv spark-3.5.1-bin-hadoop3 /opt/spark
 ```
 
-### 4. Configure Environment Variables
+### 5. Configure Environment Variables
 
 Edit ~/.bashrc file to add the environment variables:
 
@@ -59,7 +66,7 @@ Source the .bashrc file to apply the changes:
 source ~/.bashrc
 ```
 
-### 5. Test Spark Shell
+### 6. Test Spark Shell
 
 Verify the Spark installation by launching the Spark shell:
 
@@ -67,7 +74,7 @@ Verify the Spark installation by launching the Spark shell:
 spark-shell
 ```
 
-### 6. Install sbt (Scala Build Tool)
+### 7. Install sbt (Scala Build Tool)
 
 Add sbt's repository and install sbt:
 ```sh
@@ -79,7 +86,7 @@ sudo chmod 644 /etc/apt/trusted.gpg.d/scalasbt-release.gpg
 sudo apt-get update
 sudo apt-get install sbt
 ```
-### 7.Run the Spark Application
+### 8.Run the Spark Application
 Create a Python script for Spark application
 ```sh
 nano spark_example.py
