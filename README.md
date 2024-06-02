@@ -59,3 +59,37 @@ Source the .bashrc file to apply the changes:
 source ~/.bashrc
 ```
 
+### 5. Test Spark Shell
+
+Verify the Spark installation by launching the Spark shell:
+
+```sh
+spark-shell
+```
+
+### 6. Install sbt (Scala Build Tool)
+
+Add sbt's repository and install sbt:
+```sh
+sudo apt update
+sudo apt-get install apt-transport-https curl gnupg -yqq
+echo "deb https://repo.scala-sbt.org/scalasbt/debian all main" | sudo tee /etc/apt/sources.list.d/sbt.list
+curl -sL "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x2EE0EA64E40A89B84B2DF73499E82A75642AC823" | sudo -H gpg --no-default-keyring --keyring gnupg-ring:/etc/apt/trusted.gpg.d/scalasbt-release.gpg --import
+sudo chmod 644 /etc/apt/trusted.gpg.d/scalasbt-release.gpg
+sudo apt-get update
+sudo apt-get install sbt
+```
+### 7.Run the Spark Application
+Create a Python script for Spark application
+```sh
+nano spark_example.py
+```
+add code to the file
+
+Submit the Spark application:
+```sh
+spark-submit spark_example.py
+```
+
+### Conclusion
+This README provides a complete guide to set up Apache Spark, Java, Scala, and sbt on Ubuntu, and demonstrates how to run a simple Spark application using spark-submit. Follow the steps carefully to ensure successful setup and execution.
